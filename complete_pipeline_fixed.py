@@ -225,6 +225,8 @@ def train_models(processed_data):
         
         torch.save(model.state_dict(), f'models/{container_name}_model.pth')
         print(f"    ✓ 模型已保存")
+        with open(f'models/{container_name}_scaler.pkl', 'wb') as f:
+            pickle.dump(data['scaler'], f)
         
         # 绘制训练曲线
         plt.figure(figsize=(10, 5))
