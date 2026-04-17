@@ -6,6 +6,9 @@
 运行: python hybrid_pipeline.py
 """
 
+import os
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'  # 解决 OpenMP 库冲突问题，启用 GPU
+
 import pandas as pd
 import numpy as np
 import torch
@@ -141,6 +144,10 @@ def preprocess_data(seq_len=120):
 def train_and_evaluate(processed_data):
     print("\n" + "="*70 + "\n步骤 2: 模型训练与评估\n" + "="*70)
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    print(f"✓ 使用设备: {device.upper()}")
+    if device == 'cuda':
+        print(f"  GPU: {torch.cuda.get_device_name(0)}")
+        print(f"  CUDA版本: {torch.version.cuda}")
     Path('models').mkdir(exist_ok=True)
     Path('output').mkdir(exist_ok=True)
     

@@ -21,11 +21,11 @@ if data_files:
     print(df.head(10))
     
     print(f"\n容器列表:")
-    print(df['container'].unique())
-    
+    print(df['container_name'].unique())
+        
     print(f"\n统计信息:")
-    for container in df['container'].unique():
-        cdf = df[df['container'] == container]
+    for container in df['container_name'].unique():
+        cdf = df[df['container_name'] == container]
         print(f"\n{container}:")
         print(f"  样本数: {len(cdf)}")
         print(f"  CPU: {cdf['cpu_percent'].mean():.2f}%")

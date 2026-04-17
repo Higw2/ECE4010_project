@@ -150,4 +150,4 @@ def run_monitor(target_container="qbittorrent", nas_ip="192.168.3.2", nas_port=2
             time.sleep(interval)
 
 if __name__ == '__main__':
-    run_monitor(target_container="qbittorrent")
+    run_monitor(target_container="qbittorrent-app-1")
