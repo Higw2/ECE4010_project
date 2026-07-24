@@ -5,7 +5,7 @@
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-## 📖 项目简介
+## 项目简介
 
 这是一个专门针对轻量级服务器和家庭 NAS（如绿联 NAS 等）环境设计的 **无侵入式 Docker 容器实时异常检测系统**。
 
@@ -13,12 +13,12 @@
 
 ---
 
-## ✨ 核心特性
+## 核心特性
 
-- **🛡️ 纯无侵入式监控**：无需在容器（如 qBittorrent、Jellyfin 等）内部植入任何探针，依赖外部 API 轮询，开销极低。
-- **🧠 抛弃传统位置编码**：创新性地使用 **LSTM** 作为前端特征提取器，利用其循环特性的天然时序感知能力，完美取代了 Transformer 原始生硬的数学位置编码 (Positional Encoding)。
-- **🔭 上帝视角长程建模**：前端提取的特征送入 **Transformer Encoder**，打破 RNN 距离限制，利用自注意力机制 (Self-Attention) 建立长达 20 分钟 (120个时间步) 的全局状态关联。
-- **📉 动态 3σ 异常判定**：基于无监督学习，利用 Latent Space (潜在空间) 压缩与逆向重构计算 MSE 误差，自动生成符合当前容器特性的动态安全阈值。
+- **纯无侵入式监控**：无需在容器（如 qBittorrent、Jellyfin 等）内部植入任何探针，依赖外部 API 轮询，开销极低。
+- **抛弃传统位置编码**：创新性地使用 **LSTM** 作为前端特征提取器，利用其循环特性的天然时序感知能力，完美取代了 Transformer 原始生硬的数学位置编码 (Positional Encoding)。
+- **上帝视角长程建模**：前端提取的特征送入 **Transformer Encoder**，打破 RNN 距离限制，利用自注意力机制 (Self-Attention) 建立长达 20 分钟 (120个时间步) 的全局状态关联。
+- **动态 3σ 异常判定**：基于无监督学习，利用 Latent Space (潜在空间) 压缩与逆向重构计算 MSE 误差，自动生成符合当前容器特性的动态安全阈值。
 
 ---
 
